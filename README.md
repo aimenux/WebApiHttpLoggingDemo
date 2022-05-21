@@ -9,9 +9,9 @@ In this demo, i m using [http logging middleware](https://docs.microsoft.com/en-
 >
 In addition to http logging middleware, i m enhancing application insights telemetries through the using of :
 >
-> - [Telemetry processors] : filter swagger/health logs and not send them to application insights
+- [Telemetry processors] : filter swagger/health logs and not send them to application insights
 >
-> - [Telemetry initializers] : add apikey header to related request application insights telemetries
+- [Telemetry initializers] : add apikey header to related request application insights telemetries
 >
 
 **`Tools`** : vs22, net 6.0, serilog, telemetry processor, telemetry initializer, application-insights, healthchecks
