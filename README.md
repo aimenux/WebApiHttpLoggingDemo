@@ -9,4 +9,4 @@ In this demo, i m using [http logging middleware](https://docs.microsoft.com/en-
 >
 > 
 
-**`Tools`** : vs22, net 6.0, serilog
+**`Tools`** : vs22, net 6.0, serilog, telemetry processor, telemetry initializer, application-insights, healthchecks
