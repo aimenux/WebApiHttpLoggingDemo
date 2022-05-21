@@ -1,3 +1,5 @@
+[![.NET](https://github.com/aimenux/WebApiHttpLoggingDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/WebApiHttpLoggingDemo/actions/workflows/ci.yml)
+
 # WebApiHttpLoggingDemo
 ```
 Using http logging middleware in order to log requests/responses
@@ -7,4 +9,4 @@ In this demo, i m using [http logging middleware](https://docs.microsoft.com/en-
 >
 > 
 
-**`Tools`** : vs22, net 6.0
+**`Tools`** : vs22, net 6.0, serilog
