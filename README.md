@@ -9,9 +9,11 @@ In this demo, i m using [http logging middleware](https://docs.microsoft.com/en-
 >
 In addition to http logging middleware, i m enhancing application insights telemetries through the using of :
 >
-- [Telemetry processors] : filter swagger/health logs and not send them to application insights
+
+:heavy_minus_sign: [Telemetry processors](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-filtering-sampling#create-a-telemetry-processor) : filter swagger/health logs and not send them to application insights
 >
-- [Telemetry initializers] : add apikey header to related request application insights telemetries
+
+:heavy_minus_sign: [Telemetry initializers](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-filtering-sampling#addmodify-properties-itelemetryinitializer) : add apikey header to related request application insights telemetries
 >
 
 **`Tools`** : vs22, net 6.0, serilog, telemetry processor, telemetry initializer, application-insights, healthchecks
