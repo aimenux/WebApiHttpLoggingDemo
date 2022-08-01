@@ -16,8 +16,9 @@ public partial class Startup
     {
         if (app.Environment.IsDevelopment())
         {
+            app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(options => options.DisplayRequestDuration());
         }
 
         app.UseHttpsRedirection();
@@ -31,7 +32,5 @@ public partial class Startup
         app.MapControllers();
 
         MapHealthChecks(app);
-
-        app.Run();
     }
 }
