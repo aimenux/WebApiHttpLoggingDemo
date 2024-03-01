@@ -27,6 +27,7 @@ public partial class Startup
         {
             logging.LoggingFields = HttpLoggingFields.All;
             logging.RequestHeaders.Add(ApiKeyHeaderName);
+            logging.CombineLogs = true;
         });
     }
 
@@ -48,10 +49,10 @@ public partial class Startup
 
     private static void AddApplicationInsightsTelemetry(WebApplicationBuilder builder)
     {
-        var instrumentationKey = builder.Configuration.GetValue<string>("Serilog:WriteTo:2:Args:instrumentationKey");
+        var connectionString = builder.Configuration.GetValue<string>("Serilog:WriteTo:2:Args:connectionString");
         var appInsightsOptions = new ApplicationInsightsServiceOptions
         {
-            InstrumentationKey = instrumentationKey,
+            ConnectionString = connectionString,
             DeveloperMode = builder.Environment.IsDevelopment(),
             EnableAppServicesHeartbeatTelemetryModule = false,
             EnableHeartbeat = false

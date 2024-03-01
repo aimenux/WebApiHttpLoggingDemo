@@ -2,11 +2,11 @@
 
 public class Quote
 {
-    public string Id { get; set; }
+    public string Id { get; init; }
 
-    public string Author { get; set; }
+    public string Author { get; init; }
 
-    public string Description { get; set; }
+    public string Description { get; init; }
 
     public static bool IsValid(Quote quote)
     {

@@ -11,7 +11,10 @@ public partial class Startup
 {
     private static void AddDependencies(WebApplicationBuilder builder)
     {
-        builder.Services.AddDbContext<QuoteDbContext>(options => options.UseInMemoryDatabase(DatabaseName));
+        builder.Services.AddDbContext<QuoteDbContext>(options =>
+        {
+            options.UseInMemoryDatabase(DatabaseName);
+        });
 
         builder.Services.AddHttpClient<IQuoteProxy, QuoteProxy>(client =>
         {

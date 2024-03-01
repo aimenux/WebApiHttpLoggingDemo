@@ -8,5 +8,5 @@ public class QuoteDbContext : DbContext
     {
     }
 
-    public DbSet<Quote> Quotes { get; set; }
+    public DbSet<Quote> Quotes { get; init; }
 }

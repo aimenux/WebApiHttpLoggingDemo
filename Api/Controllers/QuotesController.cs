@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers;
 
 [ApiController]
-[Route("[controller]s")]
-public class QuoteController : ControllerBase
+[Route("api/[controller]")]
+public class QuotesController : ControllerBase
 {
     private readonly IQuoteService _service;
 
-    public QuoteController(IQuoteService service)
+    public QuotesController(IQuoteService service)
     {
         _service = service ?? throw new ArgumentNullException(nameof(service));
     }

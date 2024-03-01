@@ -1,22 +1,8 @@
-﻿using System.Runtime.Serialization;
-
-namespace Domain.Exceptions;
+﻿namespace Domain.Exceptions;
 
 public class BusinessValidationException : BusinessException
 {
-    protected BusinessValidationException()
-    {
-    }
-
     protected BusinessValidationException(string message) : base(message)
-    {
-    }
-
-    protected BusinessValidationException(string message, Exception innerException) : base(message, innerException)
-    {
-    }
-
-    protected BusinessValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
     {
     }
 

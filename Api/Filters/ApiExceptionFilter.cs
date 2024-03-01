@@ -8,8 +8,6 @@ public sealed class ApiExceptionFilter : ExceptionFilterAttribute
 {
     public override void OnException(ExceptionContext context)
     {
-        if (context?.Exception is null) return;
-
         var exception = context.Exception;
 
         if (IsBadRequest(exception))
