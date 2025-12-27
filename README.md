@@ -17,4 +17,4 @@ I m also enhancing application insights telemetries through the using of :
 :heavy_minus_sign: [Telemetry initializers](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-filtering-sampling#addmodify-properties-itelemetryinitializer) : add apikey header to related request application insights telemetries
 >
 
-**`Tools`** : net 8.0, serilog, telemetry processor, telemetry initializer, application-insights, healthchecks
+**`Tools`** : net 10.0, serilog, telemetry processor, telemetry initializer, application-insights, healthchecks

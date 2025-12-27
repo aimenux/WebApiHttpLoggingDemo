@@ -33,15 +33,15 @@ public class QuoteProxy : IQuoteProxy
         };
     }
 
-    internal class QuoteDto
+    internal sealed record QuoteDto
     {
         [JsonPropertyName("id")]
-        public string Id { get; set; }
+        public string Id { get; init; }
 
         [JsonPropertyName("author")]
-        public string Author { get; set; }
+        public string Author { get; init; }
 
         [JsonPropertyName("en")]
-        public string Content { get; set; }
+        public string Content { get; init; }
     }
 }

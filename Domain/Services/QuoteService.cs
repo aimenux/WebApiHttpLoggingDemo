@@ -15,14 +15,14 @@ public class QuoteService : IQuoteService
         _repository = quoteRepository ?? throw new ArgumentNullException(nameof(quoteRepository));
     }
 
-    public async Task<Quote> AddQuoteAsync(CancellationToken cancellationToken = default)
+    public async Task<Quote> AddQuoteAsync(CancellationToken cancellationToken)
     {
         var quote = await _proxy.GetQuoteAsync(cancellationToken);
         await AddQuoteAsync(quote, cancellationToken);
         return quote;
     }
 
-    public async Task<Quote> AddQuoteAsync(Quote quote, CancellationToken cancellationToken = default)
+    public async Task<Quote> AddQuoteAsync(Quote quote, CancellationToken cancellationToken)
     {
         if (!Quote.IsValid(quote))
         {
@@ -33,7 +33,7 @@ public class QuoteService : IQuoteService
         return quote;
     }
 
-    public async Task<ICollection<Quote>> GetQuotesAsync(CancellationToken cancellationToken = default)
+    public async Task<ICollection<Quote>> GetQuotesAsync(CancellationToken cancellationToken)
     {
         return await _repository.GetQuotesAsync(cancellationToken);
     }

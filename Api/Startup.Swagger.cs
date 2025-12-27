@@ -1,6 +1,5 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using static Api.Constants;
 
 namespace Api;
 
@@ -15,19 +14,19 @@ public partial class Startup
         });
     }
 
-    public class ApiKeyHeaderParameter : IOperationFilter
+    public sealed class ApiKeyHeaderParameter : IOperationFilter
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
-            operation.Parameters ??= new List<OpenApiParameter>();
+            operation.Parameters ??= new List<IOpenApiParameter>();
             operation.Parameters.Add(new OpenApiParameter
             {
-                Name = ApiKeyHeaderName,
+                Name = Constants.ApiKeyHeaderName,
                 In = ParameterLocation.Header,
                 Required = true,
                 Schema = new OpenApiSchema
                 {
-                    Type = "string"
+                    Type = JsonSchemaType.String
                 }
             });
         }

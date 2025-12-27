@@ -4,7 +4,7 @@ namespace Domain.Ports;
 
 public interface IQuoteRepository
 {
-    Task AddQuoteAsync(Quote quote, CancellationToken cancellationToken = default);
+    Task AddQuoteAsync(Quote quote, CancellationToken cancellationToken);
 
-    Task<ICollection<Quote>> GetQuotesAsync(CancellationToken cancellationToken = default);
+    Task<ICollection<Quote>> GetQuotesAsync(CancellationToken cancellationToken);
 }
