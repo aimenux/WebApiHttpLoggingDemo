@@ -23,25 +23,26 @@ public class QuoteProxy : IQuoteProxy
     public async Task<Quote> GetQuoteAsync(CancellationToken cancellationToken = default)
     {
         var relativePath = _configuration.GetValue<string>("QuoteApi:RelativePath");
-        var dto = await _client.GetFromJsonAsync<QuoteDto>($"/{relativePath}", CancellationToken.None);
-        if (dto is null) return null;
+        var quotes = await _client.GetFromJsonAsync<List<QuoteDto>>($"/{relativePath}", CancellationToken.None);
+        var quote = quotes?.FirstOrDefault();
+        if (quote is null) return null;
         return new Quote
         {
-            Id = dto.Id,
-            Author = dto.Author,
-            Description = dto.Content
+            Id = quote.Id ?? Guid.NewGuid().ToString(),
+            Author = quote.Author,
+            Description = quote.Content
         };
     }
 
-    internal sealed record QuoteDto
+    private sealed record QuoteDto
     {
-        [JsonPropertyName("id")]
+        [JsonPropertyName("c")]
         public string Id { get; init; }
 
-        [JsonPropertyName("author")]
+        [JsonPropertyName("a")]
         public string Author { get; init; }
 
-        [JsonPropertyName("en")]
+        [JsonPropertyName("q")]
         public string Content { get; init; }
     }
 }
